@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 		{% block corpo %}
-			<a href="/adiciona/">Adiciona novo item</a>
+			<lu>
+				<li><a href="/logout/">Logout</a></li>
+				<li><a href="/adiciona/">Adiciona novo item</a></li>
+			<lu>
 			<ul>
 				{% for item in lista_itens %}
 				<li>

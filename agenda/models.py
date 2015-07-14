@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -6,4 +8,7 @@ class ItemAgenda(models.Model):
 	data = models.DateField()
 	hora = models.TimeField()
 	descricao = models.TextField()
-	usuario = models.ForeignKey(User)
+	usuario = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
+
+	def __unicode__(self):
+		return u"%s - %s / %s" % (self.titulo, self.data, self.hora)

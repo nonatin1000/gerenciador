@@ -21,4 +21,8 @@ urlpatterns = [
     url(r'^adiciona/$', 'agenda.views.adiciona'), 
     url(r'^item/(?P<nr_item>\d+)/$', 'agenda.views.item'), 
     url(r'^remove/(?P<nr_item>\d+)/$', 'agenda.views.remove'),  
+    url(r'^login/', 'django.contrib.auth.views.login', {"template_name": "login.html"}),
+    url(r'^logout/', 'django.contrib.auth.views.logout_then_login', {"login_url": "/login/"}),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
 ]
