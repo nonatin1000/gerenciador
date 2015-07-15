@@ -12,3 +12,6 @@ class ItemAgenda(models.Model):
 
 	def __unicode__(self):
 		return u"%s - %s / %s" % (self.titulo, self.data, self.hora)
+
+	class Meta:
+		ordering = ['titulo']

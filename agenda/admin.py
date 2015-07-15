@@ -1,7 +1,10 @@
+# -*- encoding: utf-8 -*-
+
 from agenda.models import ItemAgenda
 from django.contrib import admin
 
 class ItemAgendaAdmin(admin.ModelAdmin):
+	list_filter = ('usuario',)
 	fields = ('titulo', 'data', 'hora', 'descricao')
 	list_display = ('data', 'hora', 'titulo')
 
