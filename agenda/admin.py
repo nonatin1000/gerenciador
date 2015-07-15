@@ -6,6 +6,7 @@ from django.contrib import admin
 class ItemAgendaAdmin(admin.ModelAdmin):
 	fields = ('titulo', 'data', 'hora', 'descricao', 'participantes')
 	list_display = ('data', 'hora', 'titulo', 'usuario')
+	list_display_links = ('data', 'hora', 'titulo')
 	list_filter = ('usuario',)
 
 	def queryset(self, request):
