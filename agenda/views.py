@@ -18,7 +18,8 @@ def adiciona(request):
 		if form.is_valid():
 			item = form.save(commit=False)
 			item.usuario = request.user
-			form.save()
+			item.save()
+			form.save_m2m()
 			return render_to_response("salvo.html", {})
 	else:
 		form = FormItemAgenda()
@@ -33,7 +34,8 @@ def item(request, nr_item):
 		if form.is_valid():
 			item = form.save(commit=False)
 			item.usuario = request.user
-			form.save()
+			item.save()
+			form.save_m2m()
 			return render_to_response("atualizado.html", {})
 	else:
 		form = FormItemAgenda(instance=item)
